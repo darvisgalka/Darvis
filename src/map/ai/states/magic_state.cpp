@@ -100,7 +100,7 @@ bool CMagicState::Update(time_point tick)
 
         action_t action;
 
-        if (HasMoved() || !CanCastSpell(PTarget))
+        if (!PTarget || m_errorMsg || HasMoved() || !CanCastSpell(PTarget))
         {
             m_interrupted = true;
         }
